@@ -36,18 +36,23 @@ colorscheme gruvbox
 g:mapleader = ","
 g:localmapleader = "<space>"
 
+### scroll up/down in window
+nnoremap U <c-y>
+nnoremap D <c-e>
 
 ### windows split
-
 nnoremap sv :vsplit<cr>
 nnoremap sh :split<cr>
+
 ### window close
 nnoremap sc :quit<cr>
+
 ### window toggle
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 ### window resize
 nnoremap <C-Left> :vertical resize -2<cr>
 nnoremap <C-Right> :vertical resize +2<cr>
