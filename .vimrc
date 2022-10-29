@@ -65,6 +65,15 @@ vnoremap jk <esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+### open terminal in new windows
+nnoremap <c-t> :vertical terminal<cr>
+tnoremap <c-t> <c-\><c-n>:q!<cr>
+
+### switch between terminal win to nerdtree win or editor win
+tnoremap <c-j> <c-w>j
+tnoremap <c-k> <c-w>k
+tnoremap <c-h> <c-w>h
+tnoremap <c-l> <c-w>l
 
 ##autocmd
 autocmd FileType c nnoremap <buffer> <localleader>c i//<esc>
