@@ -45,5 +45,7 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
         "c"
-    ]
+    ],
+    // Markdownlint Configurations
+    "markdownlint.config": {}
 }

@@ -108,6 +108,7 @@ Plug 'skywind3000/vim-quickui'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/LeaderF'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 plug#end()
 
 ### plugin/coc
@@ -174,6 +175,10 @@ enddef
 # Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
+
+### plugin/markdown-preview.nvim
+nnoremap <F8> <Plug>MarkdownPreviewToggle
+inoremap <F8> <Plug>MarkdownPreviewToggle
 
 ### plugin/vim-devicons
 g:webdevicons_enable = 1
