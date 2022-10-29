@@ -29,7 +29,7 @@ set updatetime=100
 filetype indent on
 syntax on
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 ## keymap
 
@@ -81,6 +81,7 @@ abbrev @@ tsalmon3@163.com
 
 ## plugin
 plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'
 Plug 'easymotion/vim-easymotion'
@@ -200,7 +201,7 @@ noremap <space><space> :call quickui#menu#open()<cr>
 
 ### plugin/airline config
 g:airline#extensions#tabline#enabled = 1
-g:airline_theme = 'solarized'
+g:airline_theme = 'gruvbox'
 g:airline_left_sep = ''
 g:airline_left_alt_sep = ''
 g:airline_right_sep = ''
