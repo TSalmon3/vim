@@ -37,8 +37,8 @@ g:mapleader = ","
 g:localmapleader = "<space>"
 
 ### scroll up/down in window
-nnoremap U <c-y>
-nnoremap D <c-e>
+nnoremap J <c-y>
+nnoremap K <c-e>
 
 ### windows split
 nnoremap sv :vsplit<cr>
