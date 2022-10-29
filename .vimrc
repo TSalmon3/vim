@@ -127,8 +127,8 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-def CheckBackspace()
-  let col = col('.') - 1
+def CheckBackspace(): bool
+  var col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 enddef
 
