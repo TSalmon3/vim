@@ -111,6 +111,7 @@ Plug 'Yggdroot/LeaderF'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'luochen1990/rainbow'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'airblade/vim-rooter'
 plug#end()
 
 ### plugin/coc
@@ -187,6 +188,10 @@ nnoremap tr <Plug>(coc-translator-p)
 nnoremap <F8> <Plug>MarkdownPreviewToggle
 inoremap <F8> <Plug>MarkdownPreviewToggle
 
+### plugin/vim-rooter
+g:rooter_targets = '/,*'
+g:rooter_patterns = ['.git']
+
 ### plugin/vim-visual-multi
 g:VM_maps = {}
 g:VM_maps["Find Under"] = '<c-n>'
@@ -215,11 +220,13 @@ g:webdevicons_enable_starify = 1
 
 ### plugin/leaderf config
 g:lf_GtagsAutoGenerater = 1
-noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
-noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
-noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
-noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+nnoremap <c-f> :Leaderf rg<cr>
+nnoremap <c-p> :Leaderf file<cr>
+#noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+#noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+#noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+#noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+#noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 
 
 ### plugin/vim-quickui config
