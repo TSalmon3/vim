@@ -43,8 +43,7 @@
     "list.previousKeymap": "<c-u>",
     "list.nextKeymap": "<c-e>",
     "coc.preferences.formatOnSaveFiletypes": [
-        "json",
-        "c"
+        "json"
     ],
     // Markdownlint Configurations
     "markdownlint.config": {},

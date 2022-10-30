@@ -109,6 +109,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/LeaderF'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'luochen1990/rainbow'
 plug#end()
 
 ### plugin/coc
@@ -179,6 +180,13 @@ nmap <leader>rn <Plug>(coc-rename)
 ### plugin/markdown-preview.nvim
 nnoremap <F8> <Plug>MarkdownPreviewToggle
 inoremap <F8> <Plug>MarkdownPreviewToggle
+
+
+### plugin/indentLine
+g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+### plugin/rainbow
+g:rainbow_active = 1
 
 ### plugin/vim-devicons
 g:webdevicons_enable = 1
