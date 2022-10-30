@@ -117,7 +117,9 @@ plug#end()
 g:coc_global_extension = [
             \ 'coc-json',
             \ 'coc-clangd',
-            \ 'coc-vimlsp']
+            \ 'coc-vimlsp',
+            \ 'coc-translator',
+            \ 'coc-snippets']
 
 # Some servers have issues with backup files, see #649.
 set nobackup
@@ -176,6 +178,9 @@ enddef
 
 # Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
+
+### coc/translator
+nnoremap tr <Plug>(coc-translator-p)
 
 
 ### plugin/markdown-preview.nvim
