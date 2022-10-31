@@ -26,6 +26,8 @@ set laststatus=2
 set wrapmargin=2
 set updatetime=100
 
+filetype plugin on
+
 filetype indent on
 syntax on
 set background=dark
@@ -37,8 +39,8 @@ g:mapleader = ","
 g:localmapleader = "<space>"
 
 ### scroll up/down in window
-nnoremap J 2<c-y>
-nnoremap K 2<c-e>
+nnoremap K 2<c-y>
+nnoremap J 2<c-e>
 
 ### windows split
 nnoremap sv :vsplit<cr>
@@ -113,6 +115,7 @@ Plug 'luochen1990/rainbow'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-startify'
+Plug 'preservim/nerdcommenter'
 plug#end()
 
 ### plugin/coc
@@ -185,6 +188,15 @@ nmap <leader>rn <Plug>(coc-rename)
 nnoremap tr <Plug>(coc-translator-p)
 
 
+### plugin/nerdcommenter
+g:NERDSpaceDelims = 1
+g:NERDCreateDefaultMappings = 0
+# nnoremap <leader>cc <Plug>NERDCommenterComment
+# nnoremap <leader>c$ <Plug>NERDCommenterToEOL
+# nnoremap <leader>cn <Plug>NERDCommenterNested
+# nnoremap <leader>cu <Plug>NERDCommenterUnComment
+
+
 ### plugin/markdown-preview.nvim
 nnoremap <F8> <Plug>MarkdownPreviewToggle
 inoremap <F8> <Plug>MarkdownPreviewToggle
@@ -192,9 +204,10 @@ inoremap <F8> <Plug>MarkdownPreviewToggle
 ### plugin/vim-rooter
 g:rooter_targets = '/,*'
 g:rooter_patterns = ['.git']
+g:rooter_manual_only = 1
 g:rooter_cd_cmd = "cd"
 g:rooter_silent_chdir = 0
-nnoremap cd :Rooter<cr>
+nnoremap cd :Rooter<cr> :NERDTreeCWD<cr>
 
 ### plugin/vim-visual-multi
 g:VM_maps = {}
