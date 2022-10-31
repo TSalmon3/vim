@@ -191,6 +191,9 @@ inoremap <F8> <Plug>MarkdownPreviewToggle
 ### plugin/vim-rooter
 g:rooter_targets = '/,*'
 g:rooter_patterns = ['.git']
+g:rooter_cd_cmd = "cd"
+g:rooter_silent_chdir = 0
+nnoremap cd :Rooter<cr>
 
 ### plugin/vim-visual-multi
 g:VM_maps = {}
