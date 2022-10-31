@@ -37,8 +37,8 @@ g:mapleader = ","
 g:localmapleader = "<space>"
 
 ### scroll up/down in window
-nnoremap J <c-y>
-nnoremap K <c-e>
+nnoremap J 2<c-y>
+nnoremap K 2<c-e>
 
 ### windows split
 nnoremap sv :vsplit<cr>
@@ -112,6 +112,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'luochen1990/rainbow'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'airblade/vim-rooter'
+Plug 'mhinz/vim-startify'
 plug#end()
 
 ### plugin/coc
