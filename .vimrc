@@ -190,11 +190,16 @@ nnoremap tr <Plug>(coc-translator-p)
 
 ### plugin/nerdcommenter
 g:NERDSpaceDelims = 1
-g:NERDCreateDefaultMappings = 0
-# nnoremap <leader>cc <Plug>NERDCommenterComment
-# nnoremap <leader>c$ <Plug>NERDCommenterToEOL
-# nnoremap <leader>cn <Plug>NERDCommenterNested
-# nnoremap <leader>cu <Plug>NERDCommenterUnComment
+g:NERDCreateDefaultMappings = 1
+nnoremap <leader>cc <Plug>NERDCommenterComment
+nnoremap <leader>c$ <Plug>NERDCommenterToEOL
+nnoremap <leader>cn <Plug>NERDCommenterNested
+nnoremap <leader>cu <Plug>NERDCommenterUnComment
+vnoremap <leader>cc <Plug>NERDCommenterComment
+vnoremap <leader>c$ <Plug>NERDCommenterToEOL
+vnoremap <leader>cn <Plug>NERDCommenterNested
+vnoremap <leader>cu <Plug>NERDCommenterUnCommevn
+
 
 
 ### plugin/markdown-preview.nvim
@@ -233,6 +238,7 @@ g:rainbow_active = 1
 g:webdevicons_enable = 1
 g:webdevicons_enable_nerdtree = 1
 g:webdevicons_enable_airline_tabline = 1
+g:webdevicons_enable_airline_statusline = 1
 g:webdevicons_enable_starify = 1
 
 ### plugin/leaderf config
@@ -289,6 +295,20 @@ g:airline_symbols.linenr = ' :'
 g:airline_symbols.maxlinenr = '☰ '
 g:airline_symbols.dirty = '⚡'
 
+g:airline#extensions#tabline#buffer_idx_mode = 1
+nnoremap <leader>1 <Plug>AirlineSelectTab1
+nnoremap <leader>2 <Plug>AirlineSelectTab2
+nnoremap <leader>3 <Plug>AirlineSelectTab3
+nnoremap <leader>4 <Plug>AirlineSelectTab4
+nnoremap <leader>5 <Plug>AirlineSelectTab5
+nnoremap <leader>6 <Plug>AirlineSelectTab6
+nnoremap <leader>7 <Plug>AirlineSelectTab7
+nnoremap <leader>8 <Plug>AirlineSelectTab8
+nnoremap <leader>9 <Plug>AirlineSelectTab9
+nnoremap <leader>0 <Plug>AirlineSelectTab0
+
+nnoremap <leader>- <Plug>AirlineSelectPrevTab
+nnoremap <leader>= <Plug>AirlineSelectNextTab
 ### plugin/nerdtree config
 nnoremap <c-e> :NERDTreeToggle<CR>
 
