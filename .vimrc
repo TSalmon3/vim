@@ -243,6 +243,11 @@ g:VM_maps["Redo"] = '<c-r>'
 
 ### plugin/rainbow
 g:rainbow_active = 1
+g:rainbow_conf = {
+\       'separately': {
+\               'nerdtree': 0,
+\       }
+\}
 
 ### plugin/vim-devicons
 g:webdevicons_enable = 1
