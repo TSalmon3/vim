@@ -73,8 +73,8 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 ### open terminal in new windows
-nnoremap <c-t> :vertical terminal<cr>
-tnoremap <c-t> <c-\><c-n>:q!<cr>
+nnoremap tt :vertical terminal<cr>
+tnoremap tt <c-\><c-n>:q!<cr>
 
 ### switch between terminal win to nerdtree win or editor win
 tnoremap <c-j> <c-w>j
@@ -252,14 +252,16 @@ g:webdevicons_enable_airline_statusline = 1
 g:webdevicons_enable_starify = 1
 
 ### plugin/leaderf config
-g:lf_GtagsAutoGenerater = 1
+g:Lf_GtagsAutoGenerater = 1
+g:Lf_RootMarkerts = ['.git']
 nnoremap <c-f> :Leaderf rg<cr>
 nnoremap <c-p> :Leaderf file<cr>
-#noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
-#noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
-#noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
-#noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
-#noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
+nnoremap tg :Leaderf gtags --update<cr>
+noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
+noremap <leader>fn :<C-U><C-R>=printf("Leaderf gtags --next %s", "")<CR><CR>
+noremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags --previous %s", "")<CR><CR>
 
 
 ### plugin/vim-quickui config
@@ -320,7 +322,7 @@ nnoremap <leader>0 <Plug>AirlineSelectTab0
 nnoremap <leader>- <Plug>AirlineSelectPrevTab
 nnoremap <leader>= <Plug>AirlineSelectNextTab
 ### plugin/nerdtree config
-nnoremap <c-e> :NERDTreeToggle<CR>
+nnoremap te :NERDTreeToggle<CR>
 
 ### plugin/which-key config
 set timeoutlen=500

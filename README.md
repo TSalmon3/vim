@@ -26,9 +26,9 @@ sudo apt build-dep global
 sudo apt install libncurses5-dev libncursesw5-dev
 
 cd ~
-wget https://ftp.gnu.org/pub/gnu/global/global-6.6.tar.gz
-tar -zxvf global-6.6.tar.gz
-cd global-6.6
+wget https://ftp.gnu.org/pub/gnu/global/global-6.6.8.tar.gz
+tar -zxvf global-6.6.8.tar.gz
+cd global-6.6.8
 ./configure  --with-sqlite3
 make -j4
 sudo make install
