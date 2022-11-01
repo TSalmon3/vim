@@ -73,8 +73,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 ### open terminal in new windows
-nnoremap tt :vertical terminal<cr>
-tnoremap tt <c-\><c-n>:q!<cr>
+nnoremap <silent>tt :vertical terminal<cr>
+noremap <silent>tl :vertical terminal<cr> lazygit<cr>
+tnoremap <silent>tt <c-\><c-n>:q!<cr>
 
 ### switch between terminal win to nerdtree win or editor win
 tnoremap <c-j> <c-w>j
