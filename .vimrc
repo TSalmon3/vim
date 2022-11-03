@@ -38,6 +38,9 @@ colorscheme gruvbox
 g:mapleader = ","
 g:localmapleader = "<space>"
 
+### save 
+nnoremap <c-s> :w<cr>
+
 ### scroll up/down in window
 nnoremap K 2<c-y>
 nnoremap J 2<c-e>
@@ -62,7 +65,7 @@ nnoremap <C-Up> :resize -2<cr>
 nnoremap <C-Down> :resize +2<cr>
 
 ### Upper the word
-inoremap <c-u> <esc>viwUea
+inoremap <leader>u <esc>viwUea
 
 ### Fast to exit insert/visual mode
 inoremap jk <esc>
@@ -117,6 +120,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 plug#end()
 
 ### plugin/coc
@@ -233,8 +237,8 @@ g:VM_maps["Find Next"] = 'n'
 g:VM_maps["Find Prev"] = 'N'
 g:VM_maps["Remove Region"] = 'q'
 g:VM_maps["Skip Region"] = 'Q'
-g:VM_maps["Select Cursor Down"] = '<c-j>'
-g:VM_maps["Select Cursor Up"] = '<c-k>'
+g:VM_maps["Select Cursor Down"] = ',j'
+g:VM_maps["Select Cursor Up"] = ',k'
 g:VM_maps["Increase"] = '='
 g:VM_maps["Decrease"] = '-'
 g:VM_maps["Undo"] = 'u'
@@ -262,7 +266,7 @@ g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
 nnoremap <c-f> :Leaderf rg<cr>
 nnoremap <c-p> :Leaderf file<cr>
-nnoremap tg :Leaderf gtags --update<cr>
+nnoremap tg :Leaderf gtags<cr>
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
