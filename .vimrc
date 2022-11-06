@@ -33,10 +33,21 @@ syntax on
 set background=dark
 colorscheme gruvbox
 
+
 ## keymap
 
 g:mapleader = ","
 g:localmapleader = "<space>"
+
+### fix alt isn't working 
+map <esc>h <a-h>
+map <esc>j <a-j>
+map <esc>k <a-k>
+map <esc>l <a-l>
+
+map <esc>p <a-p>
+map <esc>f <a-f>
+map <esc>g <a-g>
 
 ### save 
 nnoremap <c-s> :w<cr>
@@ -53,10 +64,10 @@ nnoremap sh :split<cr>
 nnoremap sc :quit<cr>
 
 ### window toggle
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <a-h> <C-w>h
+nnoremap <a-j> <C-w>j
+nnoremap <a-k> <C-w>k
+nnoremap <a-l> <C-w>l
 
 ### window resize
 nnoremap <C-Left> :vertical resize -2<cr>
@@ -81,10 +92,10 @@ noremap <silent>tl :vertical terminal<cr> lazygit<cr>
 tnoremap <silent>tt <c-\><c-n>:q!<cr>
 
 ### switch between terminal win to nerdtree win or editor win
-tnoremap <c-j> <c-w>j
-tnoremap <c-k> <c-w>k
-tnoremap <c-h> <c-w>h
-tnoremap <c-l> <c-w>l
+tnoremap <a-j> <c-w>j
+tnoremap <a-k> <c-w>k
+tnoremap <a-h> <c-w>h
+tnoremap <a-l> <c-w>l
 
 ##autocmd
 autocmd FileType c nnoremap <buffer> <localleader>c i//<esc>
@@ -202,22 +213,23 @@ nmap <leader>rn <Plug>(coc-rename)
 ### coc/translator
 nnoremap tr <Plug>(coc-translator-p)
 
+### plugin/auto-pair
+g:AutoPairsShortcutToggle = '<c-p>'
 
 ### plugin/nerdcommenter
 g:NERDSpaceDelims = 1
 g:NERDCreateDefaultMappings = 1
-nnoremap <leader>cc <Plug>NERDCommenterComment
-nnoremap <leader>c$ <Plug>NERDCommenterToEOL
-nnoremap <leader>cn <Plug>NERDCommenterNested
-nnoremap <leader>cu <Plug>NERDCommenterUnComment
-vnoremap <leader>cc <Plug>NERDCommenterComment
-vnoremap <leader>c$ <Plug>NERDCommenterToEOL
-vnoremap <leader>cn <Plug>NERDCommenterNested
-vnoremap <leader>cu <Plug>NERDCommenterUnCommevn
+nnoremap <space>cc <Plug>NERDCommenterComment
+nnoremap <space>c$ <Plug>NERDCommenterToEOL
+nnoremap <space>cn <Plug>NERDCommenterNested
+nnoremap <space>cu <Plug>NERDCommenterUnComment
+vnoremap <space>cc <Plug>NERDCommenterComment
+vnoremap <space>c$ <Plug>NERDCommenterToEOL
+vnoremap <space>cn <Plug>NERDCommenterNested
+vnoremap <space>cu <Plug>NERDCommenterUnComment
 
 
-
-### plugin/markdown-preview.nvim
+### plugi<space>n/markdown-preview.nvim
 nnoremap <F8> <Plug>MarkdownPreviewToggle
 inoremap <F8> <Plug>MarkdownPreviewToggle
 
@@ -264,9 +276,9 @@ g:webdevicons_enable_starify = 1
 ### plugin/leaderf config
 g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
-nnoremap <c-f> :Leaderf rg<cr>
-nnoremap <c-p> :Leaderf file<cr>
-nnoremap tg :Leaderf gtags<cr>
+nnoremap <a-f> :Leaderf rg<cr>
+nnoremap <a-p> :Leaderf file<cr>
+nnoremap <a-g> :Leaderf gtags<cr>
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
