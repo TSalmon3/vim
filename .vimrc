@@ -49,6 +49,8 @@ map <esc>p <a-p>
 map <esc>f <a-f>
 map <esc>g <a-g>
 
+map <esc>o <a-o>
+
 ### save 
 nnoremap <c-s> :w<cr>
 
@@ -212,6 +214,9 @@ nmap <leader>rn <Plug>(coc-rename)
 
 ### coc/translator
 nnoremap tr <Plug>(coc-translator-p)
+
+### plugin/startify
+nnoremap <a-o> :Startify<cr>
 
 ### plugin/auto-pair
 g:AutoPairsShortcutToggle = '<c-p>'

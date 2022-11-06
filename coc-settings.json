@@ -46,5 +46,7 @@
         "json"
     ],
     // Markdownlint extern Configurations
-    "markdownlint.config": {}
+    "markdownlint.config": {},
+    // coc-clangd Configuration
+    "clangd.path": "/usr/local/bin/clangd"
 }
