@@ -1,5 +1,8 @@
 {
     "coc.preferences.extensionUpdateCheck": "daily",
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json"
+    ],
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
     "suggest.completionItemKindLabels": {
@@ -42,9 +45,6 @@
     "codeLens.enable": true,
     "list.previousKeymap": "<c-u>",
     "list.nextKeymap": "<c-e>",
-    "coc.preferences.formatOnSaveFiletypes": [
-        "json"
-    ],
     // Markdownlint extern Configurations
     "markdownlint.config": {},
     // coc-clangd Configuration

@@ -114,6 +114,7 @@ abbrev @@ tsalmon3@163.com
 
 ## plugin
 plug#begin('~/.vim/plugged')
+Plug '~/.vim/plugged/potion'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'
@@ -216,7 +217,7 @@ nmap <leader>rn <Plug>(coc-rename)
 nnoremap tr <Plug>(coc-translator-p)
 
 ### plugin/startify
-nnoremap <a-o> :Startify<cr>
+nnoremap gs :Startify<cr>
 
 ### plugin/auto-pair
 g:AutoPairsShortcutToggle = '<c-p>'
@@ -283,7 +284,7 @@ g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
 nnoremap <a-f> :Leaderf rg<cr>
 nnoremap <a-p> :Leaderf file<cr>
-nnoremap <a-g> :Leaderf gtags<cr>
+nnoremap <a-g> :Leaderf gtags --update<cr> :Leaderf gtags<cr>
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fo :<C-U><C-R>=printf("Leaderf! gtags --recall %s", "")<CR><CR>
