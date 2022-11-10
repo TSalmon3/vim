@@ -49,6 +49,7 @@ map <esc>l <a-l>
 map <esc>p <a-p>
 map <esc>f <a-f>
 map <esc>g <a-g>
+map <esc>m <a-m>
 
 map <esc>o <a-o>
 
@@ -282,11 +283,12 @@ g:webdevicons_enable_airline_statusline = 1
 g:webdevicons_enable_starify = 1
 
 ### plugin/leaderf config
-g:Lf_WindowPosition = 'popup'
+#g:Lf_WindowPosition = 'popup'
 g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
 nnoremap <a-f> :Leaderf rg<cr>
 nnoremap <a-p> :Leaderf file<cr>
+nnoremap <a-m> :Leaderf mru<cr>
 nnoremap <a-g> :Leaderf gtags --update<cr> :Leaderf gtags<cr>
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
