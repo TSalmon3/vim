@@ -25,6 +25,7 @@ set softtabstop=4
 set laststatus=2
 set wrapmargin=2
 set updatetime=100
+set incsearch
 
 filetype plugin on
 
@@ -72,10 +73,10 @@ nnoremap <a-k> <C-w>k
 nnoremap <a-l> <C-w>l
 
 ### window resize
-nnoremap <C-Left> :vertical resize -2<cr>
-nnoremap <C-Right> :vertical resize +2<cr>
-nnoremap <C-Up> :resize -2<cr>
-nnoremap <C-Down> :resize +2<cr>
+nnoremap <a-Left> :vertical resize -2<cr>
+nnoremap <a-Right> :vertical resize +2<cr>
+nnoremap <a-Up> :resize -2<cr>
+nnoremap <a-Down> :resize +2<cr>
 
 ### Upper the word
 inoremap <leader>u <esc>viwUea
@@ -216,6 +217,7 @@ nmap <leader>rn <Plug>(coc-rename)
 ### coc/translator
 nnoremap tr <Plug>(coc-translator-p)
 
+
 ### plugin/startify
 nnoremap gs :Startify<cr>
 
@@ -280,6 +282,7 @@ g:webdevicons_enable_airline_statusline = 1
 g:webdevicons_enable_starify = 1
 
 ### plugin/leaderf config
+g:Lf_WindowPosition = 'popup'
 g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
 nnoremap <a-f> :Leaderf rg<cr>
