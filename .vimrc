@@ -26,6 +26,7 @@ set laststatus=2
 set wrapmargin=2
 set updatetime=100
 set incsearch
+set hlsearch
 
 filetype plugin on
 
@@ -141,6 +142,7 @@ Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
+Plug 'justinmk/vim-dirvish'
 plug#end()
 
 ### plugin/ale
@@ -151,8 +153,8 @@ g:ale_sign_warning = ''
 g:ale_echo_msg_error_str = ''
 g:ale_echo_msg_warning_str = ''
 g:ale_echo_msg_format = '[%severity%][%linter%] %s'
-nnoremap <silent> <c-]> <plug>(ale_next_wrap)
-nnoremap <silent> <c-[> <plug>(ale_previous_wrap)
+nnoremap <silent> ]d <plug>(ale_next_wrap)
+nnoremap <silent> [d <plug>(ale_previous_wrap)
 
 ### plugin/coc
 g:coc_global_extension = [
