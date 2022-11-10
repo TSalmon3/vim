@@ -137,6 +137,7 @@ Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug "Yggdroot/indentLine"
 plug#end()
 
 ### plugin/coc
