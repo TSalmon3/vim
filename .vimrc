@@ -51,6 +51,8 @@ map <esc>f <a-f>
 map <esc>g <a-g>
 map <esc>m <a-m>
 
+map <esc>d <a-d>
+
 map <esc>o <a-o>
 
 ### save 
@@ -137,8 +139,20 @@ Plug 'airblade/vim-rooter'
 Plug 'mhinz/vim-startify'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug "Yggdroot/indentLine"
+Plug 'Yggdroot/indentLine'
+Plug 'dense-analysis/ale'
 plug#end()
+
+### plugin/ale
+
+g:ale_disable_lsp = 1
+g:ale_sign_error = ''
+g:ale_sign_warning = ''
+g:ale_echo_msg_error_str = ''
+g:ale_echo_msg_warning_str = ''
+g:ale_echo_msg_format = '[%severity%][%linter%] %s'
+nnoremap <silent> <c-]> <plug>(ale_next_wrap)
+nnoremap <silent> <c-[> <plug>(ale_previous_wrap)
 
 ### plugin/coc
 g:coc_global_extension = [
@@ -183,11 +197,11 @@ inoremap <silent><expr> <c-o> coc#refresh()
 
 # Use `[g` and `]g` to navigate diagnostics
 # Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nnoremap <silent> g[ <Plug>(coc-diagnostic-prev)
-nnoremap <silent> g] <Plug>(coc-diagnostic-next)
-nnoremap <silent> ge <Plug>(coc-diagnostic-prev-error)
-nnoremap <silent> gE <Plug>(coc-diagnostic-next-error)
-nnoremap <silent> da :CocDiagnostics<cr>
+# nnoremap <silent> g[ <Plug>(coc-diagnostic-prev)
+# nnoremap <silent> g] <Plug>(coc-diagnostic-next)
+# nnoremap <silent> ge <Plug>(coc-diagnostic-prev-error)
+# nnoremap <silent> gE <Plug>(coc-diagnostic-next-error)
+nnoremap <silent> <a-d> :CocDiagnostics<cr>
 
 # GoTo code navigation.
 nnoremap <silent> gd <Plug>(coc-definition)
@@ -323,6 +337,12 @@ noremap <space><space> :call quickui#menu#open()<cr>
 
 ### plugin/airline config
 g:airline#extensions#tabline#enabled = 1
+
+g:airline#extensions#coc#enabled = 0
+g:airline#extensions#ale#enabled = 1
+g:airline#extensions#ale#error_symbol = ''
+g:airline#extensions#ale#warning_symbol = ''
+
 g:airline_theme = 'gruvbox'
 g:airline_left_sep = ''
 g:airline_left_alt_sep = ''
