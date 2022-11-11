@@ -143,6 +143,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-dirvish'
+Plug 'junegunn/gv.vim'
 plug#end()
 
 ### plugin/ale
@@ -339,6 +340,7 @@ noremap <space><space> :call quickui#menu#open()<cr>
 
 ### plugin/airline config
 g:airline#extensions#tabline#enabled = 1
+g:airline#extensions#tabline#left_sep = ''
 
 g:airline#extensions#coc#enabled = 0
 g:airline#extensions#ale#enabled = 1
@@ -362,6 +364,7 @@ g:airline_symbols.readonly = ''
 g:airline_symbols.linenr = ' :'
 g:airline_symbols.maxlinenr = '☰ '
 g:airline_symbols.dirty = '⚡'
+
 
 g:airline#extensions#tabline#buffer_idx_mode = 1
 nnoremap <leader>1 <Plug>AirlineSelectTab1
@@ -395,16 +398,20 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 noremap <leader> <Plug>(easymotion-prefix)
 
 #### <Leader>f{char} to move to {char}
-noremap  <leader>f <Plug>(easymotion-bd-f)
-nnoremap <leader>f <Plug>(easymotion-overwin-f)
+noremap  mf <Plug>(easymotion-bd-f)
+nnoremap mf <Plug>(easymotion-overwin-f)
 
 #### s{char}{char} to move to {char}{char}
-nnoremap s <Plug>(easymotion-overwin-f2)
+nnoremap ms <Plug>(easymotion-overwin-f2)
 
 #### Move to line
-noremap <leader>L <Plug>(easymotion-bd-jk)
-nnoremap <leader>L <Plug>(easymotion-overwin-line)
+noremap ml <Plug>(easymotion-bd-jk)
+nnoremap ml <Plug>(easymotion-overwin-line)
 
 #### Move to word
-noremap  <leader>w <Plug>(easymotion-bd-w)
-nnoremap <leader>w <Plug>(easymotion-overwin-w)
+noremap  mw <Plug>(easymotion-bd-w)
+nnoremap mw <Plug>(easymotion-overwin-w)
+
+### Plugin/fugitive
+### Plugin/gv.vim
+noremap <leader>gv :GV<cr>
