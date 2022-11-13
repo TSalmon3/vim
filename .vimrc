@@ -94,9 +94,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 ### open terminal in new windows
-nnoremap <silent>tt :vertical terminal<cr>
-noremap <silent>tl :vertical terminal<cr> lazygit<cr>
-tnoremap <silent>tt <c-\><c-n>:q!<cr>
+# nnoremap <silent>tt :vertical terminal<cr>
+# noremap <silent>tl :vertical terminal<cr> lazygit<cr>
+# tnoremap <silent>tt <c-\><c-n>:q!<cr>
 
 ### switch between terminal win to nerdtree win or editor win
 tnoremap <a-j> <c-w>j
@@ -144,7 +144,13 @@ Plug 'Yggdroot/indentLine'
 Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/gv.vim'
+Plug 'voldikss/vim-floaterm'
 plug#end()
+
+
+### plugin/vim-floaterm
+nnoremap <F1> :FloatermToggle<cr>
+tnoremap <F1> <C-\><C-n>:FloatermToggle<cr>
 
 ### plugin/ale
 
@@ -339,6 +345,8 @@ g:quickui_show_tip = 1
 noremap <space><space> :call quickui#menu#open()<cr>
 
 ### plugin/airline config
+
+g:airline#extensions#branch#vcs_checks = ['untracked', 'dirty']
 g:airline#extensions#tabline#enabled = 1
 g:airline#extensions#tabline#left_sep = ''
 
@@ -363,7 +371,6 @@ g:airline_symbols.colnr = ' ℅:'
 g:airline_symbols.readonly = ''
 g:airline_symbols.linenr = ' :'
 g:airline_symbols.maxlinenr = '☰ '
-g:airline_symbols.dirty = '⚡'
 
 
 g:airline#extensions#tabline#buffer_idx_mode = 1
