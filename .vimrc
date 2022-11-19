@@ -51,6 +51,7 @@ map <esc>p <a-p>
 map <esc>f <a-f>
 map <esc>g <a-g>
 map <esc>m <a-m>
+map <esc>s <a-s>
 
 map <esc>d <a-d>
 
@@ -109,9 +110,6 @@ autocmd FileType c nnoremap <buffer> <localleader>c i//<esc>
 autocmd FileType c iabbrev <buffer> iff if()<left>
 
 ##augroup
-augroup testgroup
-    autocmd BufWrite * :echom "hello world"
-augroup END
 
 ## abbrev
 abbrev @@ tsalmon3@163.com
@@ -145,10 +143,29 @@ Plug 'dense-analysis/ale'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/gv.vim'
 Plug 'voldikss/vim-floaterm'
+Plug 'puremourning/vimspector'
 plug#end()
 
 
+### plugin/vimspector
+g:vimspector_install_gadgets = ['CodeLLDB']
+
+nnoremap <leader>dd :call vimspector#Launch()<cr>
+nnoremap <leader>de :call vimspector#Reset()<cr>
+nnoremap <leader>dc :call vimspector#Continue()<cr>
+
+nnoremap <leader>dt :call vimspector#ToggleBreakpoint()<cr>
+nnoremap <leader>dT :call vimspector#ClearBreakpoints()<cr>
+
+nmap <leader>dk <Plug>VimspectorRestart
+nmap <leader>dh <Plug>VimspectorStepOut
+nmap <leader>dl <Plug>VimspectorSetpInto
+nmap <leader>dj <Plug>VimspectorSetpOver
+
+
 ### plugin/vim-floaterm
+g:flaoterm_height = 0.8
+g:floaterm_width = 0.8
 nnoremap <F1> :FloatermToggle<cr>
 tnoremap <F1> <C-\><C-n>:FloatermToggle<cr>
 
@@ -244,7 +261,7 @@ nnoremap tr <Plug>(coc-translator-p)
 
 
 ### plugin/startify
-nnoremap gs :Startify<cr>
+nnoremap <a-s> :Startify<cr>
 
 ### plugin/auto-pair
 g:AutoPairsShortcutToggle = '<c-p>'
@@ -402,6 +419,8 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 
 ### plugin/easymotion config
+g:EasyMotion_do_mapping = 0
+g:EasyMotion_smartcase = 0
 noremap <leader> <Plug>(easymotion-prefix)
 
 #### <Leader>f{char} to move to {char}
