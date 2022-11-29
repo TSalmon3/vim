@@ -105,6 +105,9 @@ tnoremap <a-k> <c-w>k
 tnoremap <a-h> <c-w>h
 tnoremap <a-l> <c-w>l
 
+##
+nnoremap <leader>x :%!xxd<cr>
+
 ##autocmd
 autocmd FileType c nnoremap <buffer> <localleader>c i//<esc>
 autocmd FileType c iabbrev <buffer> iff if()<left>
@@ -144,7 +147,12 @@ Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/gv.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
+Plug 'yegappan/mru'
 plug#end()
+
+### plugin/MRU
+g:MRU_Window_Height = 15
+nnoremap <a-m> :botright MRUToggle<cr> 
 
 
 ### plugin/vimspector
@@ -329,7 +337,7 @@ g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
 nnoremap <a-f> :Leaderf rg<cr>
 nnoremap <a-p> :Leaderf file<cr>
-nnoremap <a-m> :Leaderf mru<cr>
+# nnoremap <a-m> :Leaderf mru<cr>
 nnoremap <a-g> :Leaderf gtags --update<cr> :Leaderf gtags<cr>
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 noremap <leader>fd :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
