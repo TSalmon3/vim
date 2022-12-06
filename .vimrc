@@ -134,6 +134,7 @@ Plug 'skywind3000/vim-quickui'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/LeaderF'
+Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'luochen1990/rainbow'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -148,7 +149,19 @@ Plug 'junegunn/gv.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
 Plug 'yegappan/mru'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 plug#end()
+
+
+### plugin/vim-cpp-enhanced-highlight(syntax highlight)
+g:cpp_member_variable_highlight = 1
+
+### plugin/vim-session
+g:session_autoload = 'no'
+
+### plugin/vim-markdown
+g:vim_markdown_folding_disable = 1
 
 ### plugin/MRU
 g:MRU_Window_Height = 15
@@ -172,10 +185,17 @@ nmap <leader>dj <Plug>VimspectorSetpOver
 
 
 ### plugin/vim-floaterm
-g:flaoterm_height = 0.8
+g:floaterm_height = 0.8
 g:floaterm_width = 0.8
-nnoremap <F1> :FloatermToggle<cr>
-tnoremap <F1> <C-\><C-n>:FloatermToggle<cr>
+g:floaterm_autoclose = 2
+# g:floaterm_wintype = 'vsplit'
+# g:floaterm_position = 'right'
+
+nnoremap <F1> :FloatermToggle --cwd=<root><cr>
+tnoremap <F1> <C-\><C-n>:FloatermToggle --cwd=<root><cr>
+
+nnoremap tt :FloatermToggle<cr>
+tnoremap tt <C-\><C-n>:FloatermToggle<cr>
 
 ### plugin/ale
 
@@ -185,16 +205,16 @@ g:ale_sign_warning = ''
 g:ale_echo_msg_error_str = ''
 g:ale_echo_msg_warning_str = ''
 g:ale_echo_msg_format = '[%severity%][%linter%] %s'
-nnoremap <silent> ]d <plug>(ale_next_wrap)
-nnoremap <silent> [d <plug>(ale_previous_wrap)
+nnoremap <silent> ]e <plug>(ale_next_wrap)
+nnoremap <silent> [e <plug>(ale_previous_wrap)
 
 ### plugin/coc
 g:coc_global_extension = [
-            \ 'coc-json',
-            \ 'coc-clangd',
-            \ 'coc-vimlsp',
-            \ 'coc-translator',
-            \ 'coc-snippets']
+        \ 'coc-json',
+        \ 'coc-clangd',
+        \ 'coc-vimlsp',
+        \ 'coc-translator',
+        \ 'coc-snippets']
 
 # Some servers have issues with backup files, see #649.
 set nobackup
@@ -211,19 +231,19 @@ set signcolumn=yes
 # NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 # other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
+  \ coc#pum#visible() ? coc#pum#next(1) :
+  \ CheckBackspace() ? "\<Tab>" :
+  \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 # Make <CR> to accept selected completion item or notify coc.nvim to format
 # <C-g>u breaks current undo, please make your own choice.
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+                          \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 def CheckBackspace(): bool
-  var col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+var col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
 enddef
 
 # Use <c-o> to trigger completion.
@@ -251,7 +271,7 @@ nnoremap <silent> gr <Plug>(coc-references)
 # nnoremap <silent> da <Plug>(coc-list-diagnostics)
 
 # Use K to show documentation in preview window.
-nnoremap <silent> <space>h :call ShowDocumentation()<CR>
+nnoremap <silent> K :call ShowDocumentation()<CR>
 
 def ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -260,6 +280,9 @@ def ShowDocumentation()
     feedkeys('K', 'in')
   endif
 enddef
+
+# Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 # Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -297,7 +320,7 @@ g:rooter_patterns = ['.git']
 g:rooter_manual_only = 1
 g:rooter_cd_cmd = "cd"
 g:rooter_silent_chdir = 0
-nnoremap cd :Rooter<cr> :NERDTreeCWD<cr>
+nnoremap cd :Rooter<cr> :NERDTreeCWD<cr> :NERDTreeToggle<cr>
 
 ### plugin/vim-visual-multi
 g:VM_maps = {}
