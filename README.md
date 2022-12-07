@@ -7,6 +7,21 @@
 
 ## Requirements
 
+### ctag
+
+This is required for Vista.vim
+
+```{bash}
+sudo apt install libjansoon-dev
+git clone git clone https://github.com/universal-ctags/ctags.git --depth=1
+cd ctags
+./autogen.sh
+./configure
+sudo make 
+sudo make install
+```
+
+
 ### repgrep
 
 This is required for leaderF

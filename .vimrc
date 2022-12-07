@@ -121,6 +121,7 @@ abbrev @@ tsalmon3@163.com
 ## plugin
 plug#begin('~/.vim/plugged')
 Plug '~/.vim/plugged/potion'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'liuchengxu/vim-which-key'
@@ -134,7 +135,7 @@ Plug 'skywind3000/vim-quickui'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/LeaderF'
-Plug 'preservim/vim-markdown'
+#Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'luochen1990/rainbow'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -151,7 +152,16 @@ Plug 'puremourning/vimspector'
 Plug 'yegappan/mru'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
+Plug 'liuchengxu/vista.vim'
 plug#end()
+
+
+### plugin/vista.vim
+g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+g:vista#renderer#enable_icon = 1
+g:vista_highlight_whole_line = 1
+autocmd BufEnter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif
+nnoremap ta :Vista ctags<cr>
 
 
 ### plugin/vim-cpp-enhanced-highlight(syntax highlight)
