@@ -312,14 +312,14 @@ g:AutoPairsShortcutToggle = '<c-p>'
 ### plugin/nerdcommenter
 g:NERDSpaceDelims = 1
 g:NERDCreateDefaultMappings = 1
-nnoremap <space>cc <Plug>NERDCommenterComment
-nnoremap <space>c$ <Plug>NERDCommenterToEOL
-nnoremap <space>cn <Plug>NERDCommenterNested
-nnoremap <space>cu <Plug>NERDCommenterUnComment
-vnoremap <space>cc <Plug>NERDCommenterComment
-vnoremap <space>c$ <Plug>NERDCommenterToEOL
-vnoremap <space>cn <Plug>NERDCommenterNested
-vnoremap <space>cu <Plug>NERDCommenterUnComment
+nnoremap <leader>cc <Plug>NERDCommenterComment
+nnoremap <leader>c$ <Plug>NERDCommenterToEOL
+nnoremap <leader>cn <Plug>NERDCommenterNested
+nnoremap <leader>cu <Plug>NERDCommenterUnComment
+vnoremap <leader>cc <Plug>NERDCommenterComment
+vnoremap <leader>c$ <Plug>NERDCommenterToEOL
+vnoremap <leader>cn <Plug>NERDCommenterNested
+vnoremap <leader>cu <Plug>NERDCommenterUnComment
 
 
 ### plugi<space>n/markdown-preview.nvim
