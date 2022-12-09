@@ -162,6 +162,7 @@ g:vista#renderer#enable_icon = 1
 g:vista_highlight_whole_line = 1
 autocmd BufEnter * if winnr("$") == 1 && vista#sidebar#IsOpen() | execute "normal! :q!\<CR>" | endif
 nnoremap ta :Vista ctags<cr>
+nnoremap txa :Vista!<cr>
 
 
 ### plugin/vim-cpp-enhanced-highlight(syntax highlight)
@@ -205,6 +206,7 @@ nnoremap <F1> :FloatermToggle --cwd=<root><cr>
 tnoremap <F1> <C-\><C-n>:FloatermToggle --cwd=<root><cr>
 
 nnoremap tt :FloatermToggle<cr>
+nnoremap txt :FloatermKill<cr>
 tnoremap tt <C-\><C-n>:FloatermToggle<cr>
 
 ### plugin/ale
