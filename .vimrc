@@ -18,10 +18,10 @@ set mouse=a
 set encoding=utf-8
 set t_Co=256
 set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=8
+set shiftwidth=8
 set expandtab
-set softtabstop=4
+set softtabstop=8
 set laststatus=2
 set wrapmargin=2
 set updatetime=100
@@ -153,8 +153,12 @@ Plug 'yegappan/mru'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'liuchengxu/vista.vim'
+Plug 'vim-autoformat/vim-autoformat'
 plug#end()
 
+### plugin/vim-autoformat
+nnoremap <F3> :AutoFormat<CR>
+au BufWrite *.c :Autoformat
 
 ### plugin/vista.vim
 g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
