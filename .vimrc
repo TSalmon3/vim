@@ -27,6 +27,7 @@ set wrapmargin=2
 set updatetime=100
 set incsearch
 set hlsearch
+set nocompatible
 
 filetype plugin on
 
@@ -135,7 +136,7 @@ Plug 'skywind3000/vim-quickui'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/LeaderF'
-#Plug 'preservim/vim-markdown'
+# Plug 'preservim/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 Plug 'luochen1990/rainbow'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
@@ -154,7 +155,28 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-autoformat/vim-autoformat'
+Plug 'vimwiki/vimwiki'
 plug#end()
+
+### plugin/startify
+g:startify_lists = [
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'files',     'header': ['   MRU']            },
+          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ ]
+
+g:startify_bookmarks = ['~/OneDrive/Document/Obsidian/blog/index.md']
+
+### plugin/vimwiki
+var blog = {}
+blog.path = "~/OneDrive/Document/Obsidian/blog"
+blog.syntax = 'markdown'
+blog.ext = '.md'
+
+g:vimwiki_list = [blog]
+g:vimwiki_global_ext = 0
+
+# g:vimwiki_list = [{'path': '~/OneDrive/Document/Obsidian/blog/'}]
 
 ### plugin/vim-autoformat
 nnoremap <F3> :AutoFormat<CR>
@@ -368,7 +390,7 @@ g:webdevicons_enable = 1
 g:webdevicons_enable_nerdtree = 1
 g:webdevicons_enable_airline_tabline = 1
 g:webdevicons_enable_airline_statusline = 1
-g:webdevicons_enable_starify = 1
+g:webdevicons_enable_startify = 1
 
 ### plugin/leaderf config
 #g:Lf_WindowPosition = 'popup'
