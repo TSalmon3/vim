@@ -151,8 +151,6 @@ Plug 'junegunn/gv.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'puremourning/vimspector'
 Plug 'yegappan/mru'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'vimwiki/vimwiki'
@@ -161,17 +159,21 @@ plug#end()
 ### plugin/startify
 g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
           \ { 'type': 'files',     'header': ['   MRU']            },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
 
-g:startify_bookmarks = ['~/OneDrive/Document/Obsidian/blog/index.md']
+g:startify_bookmarks = ['~/OneDrive/Document/Obsidian/bookmark/index.md']
+
+nnoremap <leader>ls :SSave<cr>
+nnoremap <leader>ll :SClose<cr>
 
 ### plugin/vimwiki
 var blog = {}
-blog.path = "~/OneDrive/Document/Obsidian/blog"
+blog.path = "~/OneDrive/Document/Obsidian/bookmark"
 blog.syntax = 'markdown'
 blog.ext = '.md'
+blog.auto_tags = 1
 
 g:vimwiki_list = [blog]
 g:vimwiki_global_ext = 0
@@ -193,9 +195,6 @@ nnoremap txa :Vista!<cr>
 
 ### plugin/vim-cpp-enhanced-highlight(syntax highlight)
 g:cpp_member_variable_highlight = 1
-
-### plugin/vim-session
-g:session_autoload = 'no'
 
 ### plugin/vim-markdown
 g:vim_markdown_folding_disable = 1
@@ -349,6 +348,7 @@ vnoremap <leader>cu <Plug>NERDCommenterUnComment
 
 
 ### plugi<space>n/markdown-preview.nvim
+g:mkdp_brower = 'chrominum'
 nnoremap <F8> <Plug>MarkdownPreviewToggle
 inoremap <F8> <Plug>MarkdownPreviewToggle
 
@@ -368,8 +368,8 @@ g:VM_maps["Find Next"] = 'n'
 g:VM_maps["Find Prev"] = 'N'
 g:VM_maps["Remove Region"] = 'q'
 g:VM_maps["Skip Region"] = 'Q'
-g:VM_maps["Select Cursor Down"] = ',j'
-g:VM_maps["Select Cursor Up"] = ',k'
+g:VM_maps["Select Cursor Down"] = '<c-j>'
+g:VM_maps["Select Cursor Up"] = '<c-k>'
 g:VM_maps["Increase"] = '='
 g:VM_maps["Decrease"] = '-'
 g:VM_maps["Undo"] = 'u'
