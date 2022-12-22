@@ -53,6 +53,7 @@ map <esc>f <a-f>
 map <esc>g <a-g>
 map <esc>m <a-m>
 map <esc>s <a-s>
+map <esc>w <a-w>
 
 map <esc>d <a-d>
 
@@ -165,8 +166,8 @@ g:startify_lists = [
 
 g:startify_bookmarks = ['~/OneDrive/Document/Obsidian/bookmark/index.md']
 
-nnoremap <leader>ls :SSave<cr>
-nnoremap <leader>ll :SClose<cr>
+nnoremap <leader>ss :SSave<cr>
+nnoremap <leader>sc :SClose<cr>
 
 ### plugin/vimwiki
 var blog = {}
@@ -177,6 +178,9 @@ blog.auto_tags = 1
 
 g:vimwiki_list = [blog]
 g:vimwiki_global_ext = 0
+g:vimwiki_auto_chdir = 1
+
+nnoremap <a-w> :VimwikiSearch :
 
 # g:vimwiki_list = [{'path': '~/OneDrive/Document/Obsidian/blog/'}]
 
@@ -392,11 +396,11 @@ g:webdevicons_enable_airline_tabline = 1
 g:webdevicons_enable_airline_statusline = 1
 g:webdevicons_enable_startify = 1
 
-### plugin/leaderf config
+### plugin/Leaderf config
 #g:Lf_WindowPosition = 'popup'
 g:Lf_GtagsAutoGenerater = 1
 g:Lf_RootMarkerts = ['.git']
-nnoremap <a-f> :Leaderf rg<cr>
+nnoremap <a-f> :Leaderf rg -i<cr>
 nnoremap <a-p> :Leaderf file<cr>
 # nnoremap <a-m> :Leaderf mru<cr>
 nnoremap <a-g> :Leaderf gtags --update<cr> :Leaderf gtags<cr>
