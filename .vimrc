@@ -186,7 +186,7 @@ nnoremap <a-w> :VimwikiSearch :
 # g:vimwiki_list = [{'path': '~/OneDrive/Document/Obsidian/blog/'}]
 
 ### plugin/vim-autoformat
-nnoremap <F3> :AutoFormat<CR>
+nnoremap <F3> :Autoformat<CR>
 au BufWrite *.c :Autoformat
 
 ### plugin/vista.vim
@@ -238,7 +238,8 @@ tnoremap <F1> <C-\><C-n>:FloatermToggle --cwd=<root><cr>
 nnoremap tt :FloatermToggle<cr>
 nnoremap txt :FloatermKill<cr>
 tnoremap tt <C-\><C-n>:FloatermToggle<cr>
-
+tnoremap txt <C-\><C-n>:FloatermKill<cr>
+tnoremap <esc> <C-\><C-n>
 ### plugin/ale
 
 g:ale_disable_lsp = 1
