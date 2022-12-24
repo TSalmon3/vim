@@ -7,6 +7,7 @@ set ruler
 set number
 set relativenumber
 set textwidth=80
+set cc=+1
 set wrap
 set linebreak
 set sidescrolloff=15
@@ -366,6 +367,7 @@ nnoremap cd :Rooter<cr> :NERDTreeCWD<cr> :NERDTreeToggle<cr>
 
 ### plugin/vim-visual-multi
 g:VM_maps = {}
+g:VM_maps["Exit"] = '<esc>'
 g:VM_maps["Find Under"] = '<c-n>'
 g:VM_maps["Find Subword Under"] = '<c-n>'
 g:VM_maps["Find Next"] = 'n'
