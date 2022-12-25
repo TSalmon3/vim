@@ -30,6 +30,9 @@ set incsearch
 set hlsearch
 set nocompatible
 
+set wildmenu
+set wildmode=longest:full,full
+
 filetype plugin on
 
 filetype indent on
