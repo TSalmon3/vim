@@ -30,8 +30,8 @@ set incsearch
 set hlsearch
 set nocompatible
 
-set wildmenu
-set wildmode=longest:full,full
+# set wildmenu
+# set wildmode=longest:full,full
 
 filetype plugin on
 
@@ -159,7 +159,49 @@ Plug 'yegappan/mru'
 Plug 'liuchengxu/vista.vim'
 Plug 'vim-autoformat/vim-autoformat'
 Plug 'vimwiki/vimwiki'
+Plug 'romainl/vim-cool'
+Plug 'gelguy/wilder.nvim'
 plug#end()
+
+### plugin/wilder.nvim
+call wilder#setup({
+      \ 'modes': [':', '/', '?'],
+      \ 'next_key': '<Tab>',
+      \ 'previous_key': '<S-Tab>',
+      \ })
+
+
+
+call wilder#set_option('renderer', wilder#renderer_mux({
+      \ ':': wilder#popupmenu_renderer(),
+      \ '/': wilder#wildmenu_renderer(),
+      \ }))
+
+
+call wilder#set_option('renderer', wilder#popupmenu_renderer({
+      \ 'pumblend': 20,
+      \ 'highlighter': wilder#basic_highlighter(),
+      \ 'left': [
+      \   ' ', wilder#popupmenu_devicons(),
+      \ ],
+      \ 'right': [
+      \   ' ', wilder#popupmenu_scrollbar(),
+      \ ],
+      \ }))
+
+# 'border'            : 'single', 'double', 'rounded' or 'solid'
+#                     : can also be a list of 8 characters,
+#                     : see :h wilder#popupmenu_border_theme() for more details
+# 'highlights.border' : highlight to use for the border`
+# call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
+      # \ 'highlights': {
+      # \   'border': 'Normal',
+      # \ },
+      # \ 'border': 'rounded',
+      # \ })))
+
+### plugin/vim-cool
+g:cool_total_matches = 1
 
 ### plugin/startify
 g:startify_lists = [
