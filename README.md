@@ -71,7 +71,7 @@ wget https://github.com/clangd/clangd/releases/download/15.0.3/clangd-linux-15.0
 unzip clangd-linux-15.0.3
 cd clangd_15.0.3
 sudo cp ./bin/clangd /usr/local/bin/clnagd
-sudomv ./lib/clangd /usr/local/lib
+sudo mv ./lib/clang /usr/local/lib
 ```
 
 or
