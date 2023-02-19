@@ -22,7 +22,7 @@ sudo make install
 ```
 
 
-### repgrep
+### ripgrep
 
 This is required for leaderF
 
